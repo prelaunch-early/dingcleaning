@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Cleaners Fast. | DING CLEANING</title>
+    <!-- Tailwind CSS for modern responsive layout design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for clean minimal icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: {
+                            50: '#f0f5ff',
+                            100: '#e1eaff',
+                            500: '#0B4BB4', // Custom color matched from Screenshot 2026-07-08 at 10.52.31 PM.jpg
+                            600: '#0047BA', 
+                            700: '#003ba1',
+                            800: '#002f82',
+                            900: '#0b2a63',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom pulse visual for hotspot inspection indicators */
+        @keyframes custom-pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(11, 75, 180, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 12px rgba(11, 75, 180, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(11, 75, 180, 0);
+            }
+        }
+        .pulse-dot {
+            animation: custom-pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#FBFBFD] text-[#1D1D1F] font-sans antialiased overflow-x-hidden">
+
+<!-- Apple-Style Minimalist Sticky Header -->
+<header class="sticky top-0 z-50 bg-[#FBFBFD]/80 backdrop-blur-md border-b border-zinc-200/60 transition-all">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+            
+            <!-- Brand Logo (Pure SVG representation matching Screenshot 2026-07-08 at 10.52.31 PM.jpg) -->
+            <a href="#" class="flex items-center space-x-2.5">
+                <div class="w-8 h-8 bg-brandBlue-500 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="8" fill="none"/>
+                        <path d="M28 35 H72 M33 46 H67 M38 35 V58 C38 68, 44 68, 50 68 C56 68, 62 68, 62 58 V35 M50 35 V58" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M44 72 L42 80 M56 72 L58 80" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="leading-none">
+                    <span class="text-sm font-black tracking-tight text-[#1D1D1F]">鼎洁 DING</span>
+                    <p class="text-[7px] font-bold tracking-widest text-zinc-400 mt-0.5">CLEANING</p>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-[13px] font-medium text-zinc-500">
+                <a href="#sectors" class="hover:text-brandBlue-500 transition-colors">Sectors</a>
+                <a href="#standards" class="hover:text-brandBlue-500 transition-colors">Our Standards</a>
+                <a href="#rates" class="hover:text-brandBlue-500 transition-colors">Rates</a>
+                <a href="#faqs" class="hover:text-brandBlue-500 transition-colors">FAQs</a>
+            </nav>
+
+            <!-- Action button -->
+            <div class="flex items-center space-x-3">
+                <a href="https://wa.me/6581918108?text=Hi%20there!%20I%20would%20like%20to%20book%20an%20appointment%20to%20discuss%20cleaning%20manpower%20options." 
+                   target="_blank" 
+                   class="bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 shadow-sm flex items-center space-x-1.5">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Book Appointment</span>
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-1.5 text-zinc-600 hover:text-zinc-900 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#FBFBFD] border-t border-zinc-200/60 px-6 py-4 space-y-3 shadow-lg">
+        <a href="#sectors" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">Sectors</a>
+        <a href="#standards" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">Our Standards</a>
+        <a href="#rates" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">Rates</a>
+        <a href="#faqs" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">FAQs</a>
+    </div>
+</header>
+
+<!-- Elegant Minimalist Hero Section with Large Image (Inspired by Journal X layout) -->
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <!-- Immersive Photo Background -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" 
+             alt="Pristine Corporate Workspace Space" 
+             class="w-full h-full object-cover">
+        <!-- Deep overlay for high-contrast typography -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
+    </div>
+
+    <!-- Hero Content Interface -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white space-y-6 pt-16 pb-20">
+        
+        <!-- Minimalist Pill Badge -->
+        <div class="inline-flex items-center space-x-1.5 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-zinc-200 border border-white/10">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
+            <span>Direct Commercial Manpower Supplier</span>
+        </div>
+        
+        <!-- Big Apple-style Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
+            Get Cleaners Fast.
+        </h1>
+        
+        <!-- Simple Subheading -->
+        <p class="text-zinc-300 text-sm sm:text-base max-w-xl mx-auto font-normal leading-relaxed">
+            Reliable cleaning manpower for Singapore businesses
+        </p>
+        
+        <!-- Minimal CTA Actions -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-4">
+            <a href="https://wa.me/6581918108?text=Hi!%20I%20would%20like%20to%20discuss%20hiring%20cleaning%20manpower%20for%20my%20business." 
+               target="_blank" 
+               class="bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold px-6 py-3.5 rounded-full shadow-md hover:scale-[1.01] transition-all text-xs flex items-center space-x-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>WhatsApp us!</span>
+            </a>
+        </div>
+
+        <!-- Pagination Dot Indicators mimicking cc50a11fe8904a24f126a022a4f5924f.jpg style -->
+        <div class="flex justify-center space-x-2 pt-12">
+            <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+        </div>
+    </div>
+</section>
+
+<!-- Target Sectors Grid (Inspired by Journal X Article Categories) -->
+<section id="sectors" class="py-24 border-t border-zinc-200/60 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center md:text-left mb-12">
+            <p class="text-[10px] uppercase tracking-widest font-bold text-brandBlue-500 mb-1">Tailored Solutions</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1D1D1F]">Industries We Support</h2>
+        </div>
+
+        <!-- 6 Frame Tall Photo Category Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Frame 1: Food Courts -->
+            <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600" 
+                     alt="Food Courts and Hawker Centers" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                <a href="https://wa.me/6581918108?text=Hi!%20I'd%20like%20to%20arrange%20food%20court%20cleaning%20manpower." 
+                   target="_blank"
+                   class="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-brandBlue-500 hover:bg-brandBlue-500 hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span class="text-[9px] uppercase tracking-wider font-extrabold text-brandBlue-100 block mb-1">F&B Hubs</span>
+                    <h3 class="text-lg font-bold">Food Courts</h3>
+                </div>
+            </div>
+
+            <!-- Frame 2: Hotels -->
+            <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=600" 
+                     alt="Hotels and Luxury Lodges" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                <a href="https://wa.me/6581918108?text=Hi!%20I'd%20like%20to%20arrange%20hotel%20cleaning%20manpower." 
+                   target="_blank"
+                   class="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-brandBlue-500 hover:bg-brandBlue-500 hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span class="text-[9px] uppercase tracking-wider font-extrabold text-brandBlue-100 block mb-1">Hospitality</span>
+                    <h3 class="text-lg font-bold">Hotels & Lodges</h3>
+                </div>
+            </div>
+
+            <!-- Frame 3: Offices -->
+            <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600" 
+                     alt="Corporate Office Buildings" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                <a href="https://wa.me/6581918108?text=Hi!%20I'd%20like%20to%20arrange%20office%20cleaning%20manpower." 
+                   target="_blank"
+                   class="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-brandBlue-500 hover:bg-brandBlue-500 hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span class="text-[9px] uppercase tracking-wider font-extrabold text-brandBlue-100 block mb-1">Corporate</span>
+                    <h3 class="text-lg font-bold">Office Buildings</h3>
+                </div>
+            </div>
+
+            <!-- Frame 4: Coffee Shops -->
+            <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=600" 
+                     alt="Neighborhood Coffee Shops and Cafes" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                <a href="https://wa.me/6581918108?text=Hi!%20I'd%20like%20to%20arrange%20coffee%20shop%20cleaning%20manpower." 
+                   target="_blank"
+                   class="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-brandBlue-500 hover:bg-brandBlue-500 hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span class="text-[9px] uppercase tracking-wider font-extrabold text-brandBlue-100 block mb-1">Casual Dining</span>
+                    <h3 class="text-lg font-bold">Coffee Shops</h3>
+                </div>
+            </div>
+
+            <!-- Frame 5: Restaurants -->
+            <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=600" 
+                     alt="Premium Restaurants and Bistros" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                <a href="https://wa.me/6581918108?text=Hi!%20I'd%20like%20to%20arrange%20restaurant%20cleaning%20manpower." 
+                   target="_blank"
+                   class="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-brandBlue-500 hover:bg-brandBlue-500 hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span class="text-[9px] uppercase tracking-wider font-extrabold text-brandBlue-100 block mb-1">Dining Venues</span>
+                    <h3 class="text-lg font-bold">Restaurants</h3>
+                </div>
+            </div>
+
+            <!-- Frame 6: Showrooms -->
+            <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=600" 
+                     alt="Commercial Showrooms and Galleries" 
+                     class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+                <a href="https://wa.me/6581918108?text=Hi!%20I'd%20like%20to%20arrange%20showroom%20cleaning%20manpower." 
+                   target="_blank"
+                   class="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-brandBlue-500 hover:bg-brandBlue-500 hover:text-white transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span class="text-[9px] uppercase tracking-wider font-extrabold text-brandBlue-100 block mb-1">Exhibition</span>
+                    <h3 class="text-lg font-bold">Showrooms</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Structured "...and more" text footer centered beneath frames -->
+        <div class="text-center mt-12">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">...and more</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- Interactive Image Workspace Hotspot Map -->
+<section id="standards" class="py-24 bg-white border-t border-zinc-200/60">
+    <div class="max-w-4xl mx-auto px-6">
+        
+        <div class="text-center mb-10">
+            <p class="text-[10px] uppercase tracking-widest font-bold text-brandBlue-500 mb-1">Interactive Quality Inspection</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1D1D1F]">How We Keep Spaces Spotless</h2>
+            <p class="text-xs text-zinc-500 mt-2">Tap or hover on the pulsing hotspots to discover our systematic sanitization zones.</p>
+        </div>
+
+        <!-- Workplace graphic mapping with interactive tooltips -->
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-zinc-200/80 bg-zinc-100 max-h-[480px]">
+            
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200" 
+                 alt="Spotless Workspace Area" 
+                 class="w-full h-full object-cover max-h-[480px] filter brightness-[0.85]">
+
+            <!-- Floating Tooltip Box (Updated dynamically by JS mouse events) -->
+            <div id="hotspot-info-card" class="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-xs bg-[#FBFBFD]/95 backdrop-blur-md border border-zinc-200/60 p-4 rounded-xl shadow-lg transition-all duration-300 transform translate-y-0 opacity-100">
+                <div class="flex items-start space-x-2.5">
+                    <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                        <i class="fa-solid fa-circle-info text-xs" id="hotspot-card-icon"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1" id="hotspot-card-title">Sanitization Inspection</h4>
+                        <p class="text-[11px] text-zinc-600 leading-relaxed" id="hotspot-card-desc">Hover or click any interactive hotspot pulse indicator on the workspace layout to explore standard details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotspot Dot 1 (Countertop) -->
+            <button class="absolute top-[52%] left-[48%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('surface')"
+                    onmouseover="showHotspot('surface')"
+                    aria-label="Surface Sanitization Hotspot">
+                <span class="flex h-6 w-6 relative">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </span>
+            </button>
+
+            <!-- Hotspot Dot 2 (Glass Partition) -->
+            <button class="absolute top-[35%] left-[28%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('glass')"
+                    onmouseover="showHotspot('glass')"
+                    aria-label="Glass Partitions Hotspot">
+                <span class="flex h-6 w-6 relative">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </span>
+            </button>
+
+            <!-- Hotspot Dot 3 (Polished Floor) -->
+            <button class="absolute top-[78%] left-[65%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('flooring')"
+                    onmouseover="showHotspot('flooring')"
+                    aria-label="Floor Maintenance Hotspot">
+                <span class="flex h-6 w-6 relative">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </span>
+            </button>
+
+            <!-- Hotspot Dot 4 (Air Exhaust System) -->
+            <button class="absolute top-[20%] left-[75%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('ceiling')"
+                    onmouseover="showHotspot('ceiling')"
+                    aria-label="High Exhaust Dusting Hotspot">
+                <span class="flex h-6 w-6 relative">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </span>
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Clean, Minimalist Apple-Style Hourly Rates Section -->
+<section id="rates" class="py-24 bg-brandBlue-500 text-white border-t border-brandBlue-600">
+    <div class="max-w-4xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+            <p class="text-[10px] uppercase tracking-widest font-bold text-brandBlue-100 mb-1">Transparent Costing</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Simple Hourly Rates</h2>
+            <p class="text-xs text-brandBlue-50 mt-2">Zero hidden administration overhead. Pay exactly for the operational support hours you schedule.</p>
+        </div>
+
+        <!-- Structured Price Rate Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Price Rate 1 -->
+            <div class="bg-white border border-zinc-200 rounded-2xl p-8 text-center flex flex-col justify-between hover:border-zinc-300 transition-all shadow-sm">
+                <div>
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-zinc-400 block mb-2">Standard Areas</span>
+                    <h3 class="text-base font-bold text-[#1D1D1F] mb-4">1 x Cleaner</h3>
+                    <div class="my-4">
+                        <span class="text-4xl font-extrabold text-[#1D1D1F]">$20</span>
+                        <span class="text-xs text-zinc-400 block mt-1">/ Hour</span>
+                    </div>
+                </div>
+                <div class="mt-6 border-t border-zinc-100 pt-4">
+                    <p class="text-xs text-zinc-500">Floor maintenance, dry dusting, and public common-area upkeep.</p>
+                </div>
+            </div>
+
+            <!-- Price Rate 2 -->
+            <div class="bg-white border-2 border-brandBlue-500 rounded-2xl p-8 text-center flex flex-col justify-between hover:shadow-md transition-all relative">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brandBlue-500 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
+                    Most Popular
+                </div>
+                <div>
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-brandBlue-500 block mb-2 mt-1">Dining Halls</span>
+                    <h3 class="text-base font-bold text-[#1D1D1F] mb-4">1 x Table Cleaner</h3>
+                    <div class="my-4">
+                        <span class="text-4xl font-extrabold text-[#1D1D1F]">$25</span>
+                        <span class="text-xs text-zinc-400 block mt-1">/ Hour</span>
+                    </div>
+                </div>
+                <div class="mt-6 border-t border-zinc-100 pt-4">
+                    <p class="text-xs text-zinc-500">Rapid dining table sweeps, trash disposal, and clean tray-return stand upkeep.</p>
+                </div>
+            </div>
+
+            <!-- Price Rate 3 -->
+            <div class="bg-white border border-zinc-200 rounded-2xl p-8 text-center flex flex-col justify-between hover:border-zinc-300 transition-all shadow-sm">
+                <div>
+                    <span class="text-[10px] uppercase font-bold tracking-wider text-zinc-400 block mb-2">F&B High-Volume</span>
+                    <h3 class="text-base font-bold text-[#1D1D1F] mb-4">1 x Dishwasher</h3>
+                    <div class="my-4">
+                        <span class="text-4xl font-extrabold text-[#1D1D1F]">$30</span>
+                        <span class="text-xs text-zinc-400 block mt-1">/ Hour</span>
+                    </div>
+                </div>
+                <div class="mt-6 border-t border-zinc-100 pt-4">
+                    <p class="text-xs text-zinc-500">Professional dishwashing machines operations, stewarding, and sorting.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="https://wa.me/6581918108?text=Hi,%20I'd%20like%20to%20confirm%20manpower%20rates%20and%20arrange%20a%20booking." 
+               target="_blank" 
+               class="inline-flex items-center space-x-2 bg-white hover:bg-brandBlue-50 text-brandBlue-500 font-semibold px-6 py-2.5 rounded-full text-xs shadow-md transition-all">
+                <span>Request Custom Quote</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Deployments & Bookings FAQ Accordion -->
+<section id="faqs" class="py-24 bg-white border-t border-zinc-200/60">
+    <div class="max-w-3xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+            <p class="text-[10px] uppercase tracking-widest font-bold text-brandBlue-500 mb-1">Knowledge Hub</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1D1D1F]">Deployment FAQs</h2>
+        </div>
+
+        <!-- 6 Complete Core Business Questions -->
+        <div class="space-y-3">
+            
+            <!-- Accordion item 1 -->
+            <div class="bg-[#FBFBFD] border border-zinc-200 rounded-xl overflow-hidden transition-all duration-200">
+                <button onclick="toggleFaq(1)" class="w-full px-5 py-4 text-left flex items-center justify-between font-bold text-zinc-800 hover:bg-zinc-50 transition-colors focus:outline-none">
+                    <span class="text-xs sm:text-sm">What is your minimum roster booking session duration?</span>
+                    <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform duration-200 text-xs" id="faq-chevron-1"></i>
+                </button>
+                <div class="px-5 pb-4 text-xs text-zinc-500 leading-relaxed hidden border-t border-zinc-100 pt-3" id="faq-content-1">
+                    To maintain logistical viability and roster efficiency across Singapore, our standard deployments start at a minimum block of 4 working hours per session.
+                </div>
+            </div>
+
+            <!-- Accordion item 2 -->
+            <div class="bg-[#FBFBFD] border border-zinc-200 rounded-xl overflow-hidden transition-all duration-200">
+                <button onclick="toggleFaq(2)" class="w-full px-5 py-4 text-left flex items-center justify-between font-bold text-zinc-800 hover:bg-zinc-50 transition-colors focus:outline-none">
+                    <span class="text-xs sm:text-sm">How do you guarantee coverage when crew members take medical leave?</span>
+                    <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform duration-200 text-xs" id="faq-chevron-2"></i>
+                </button>
+                <div class="px-5 pb-4 text-xs text-zinc-500 leading-relaxed hidden border-t border-zinc-100 pt-3" id="faq-content-2">
+                    We maintain an active operational reserve pool on standby daily. If an active crew member requests emergency medical leave, we dispatch a replacement worker to cover the shift.
+                </div>
+            </div>
+
+            <!-- Accordion item 3 -->
+            <div class="bg-[#FBFBFD] border border-zinc-200 rounded-xl overflow-hidden transition-all duration-200">
+                <button onclick="toggleFaq(3)" class="w-full px-5 py-4 text-left flex items-center justify-between font-bold text-zinc-800 hover:bg-zinc-50 transition-colors focus:outline-none">
+                    <span class="text-xs sm:text-sm">Do we need to provide cleaning detergents and equipment?</span>
+                    <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform duration-200 text-xs" id="faq-chevron-3"></i>
+                </button>
+                <div class="px-5 pb-4 text-xs text-zinc-500 leading-relaxed hidden border-t border-zinc-100 pt-3" id="faq-content-3">
+                    We specialize in supplying skilled, pre-trained manpower. Clients generally provide the materials and equipment specific to their premises, but we can arrange standard tools upon special request.
+                </div>
+            </div>
+
+            <!-- Accordion item 4 -->
+            <div class="bg-[#FBFBFD] border border-zinc-200 rounded-xl overflow-hidden transition-all duration-200">
+                <button onclick="toggleFaq(4)" class="w-full px-5 py-4 text-left flex items-center justify-between font-bold text-zinc-800 hover:bg-zinc-50 transition-colors focus:outline-none">
+                    <span class="text-xs sm:text-sm">How fast can we get a cleaner deployed to our location?</span>
+                    <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform duration-200 text-xs" id="faq-chevron-4"></i>
+                </button>
+                <div class="px-5 pb-4 text-xs text-zinc-500 leading-relaxed hidden border-t border-zinc-100 pt-3" id="faq-content-4">
+                    Depending on current booking schedules and shift capacities, we can typically finalize scheduling rosters and deploy reliable staff within 24 to 48 hours of confirmation.
+                </div>
+            </div>
+
+            <!-- Accordion item 5 -->
+            <div class="bg-[#FBFBFD] border border-zinc-200 rounded-xl overflow-hidden transition-all duration-200">
+                <button onclick="toggleFaq(5)" class="w-full px-5 py-4 text-left flex items-center justify-between font-bold text-zinc-800 hover:bg-zinc-50 transition-colors focus:outline-none">
+                    <span class="text-xs sm:text-sm">Is there a contract lock-in period for recurring commercial schedules?</span>
+                    <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform duration-200 text-xs" id="faq-chevron-5"></i>
+                </button>
+                <div class="px-5 pb-4 text-xs text-zinc-500 leading-relaxed hidden border-t border-zinc-100 pt-3" id="faq-content-5">
+                    No, we believe in flexible solutions. We offer month-to-month dynamic bookings alongside regular weekly routines, ensuring you only pay for active services without long-term traps.
+                </div>
+            </div>
+
+            <!-- Accordion item 6 -->
+            <div class="bg-[#FBFBFD] border border-zinc-200 rounded-xl overflow-hidden transition-all duration-200">
+                <button onclick="toggleFaq(6)" class="w-full px-5 py-4 text-left flex items-center justify-between font-bold text-zinc-800 hover:bg-zinc-50 transition-colors focus:outline-none">
+                    <span class="text-xs sm:text-sm">Are your cleaning crews trained for specific F&B and hotel hygiene guidelines?</span>
+                    <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform duration-200 text-xs" id="faq-chevron-6"></i>
+                </button>
+                <div class="px-5 pb-4 text-xs text-zinc-500 leading-relaxed hidden border-t border-zinc-100 pt-3" id="faq-content-6">
+                    Yes. All of our workers undergo proper orientation aligning with Singapore hygiene guidelines, covering sanitization procedures, cross-contamination prevention, and safety techniques.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Plain Call-to-Action Section with Changeable Image Background -->
+<section class="py-24 text-white relative overflow-hidden bg-brandBlue-900">
+    
+    <!-- CHANGEABLE BACKGROUND IMAGE CONTAINER: Replace the unsplash URL in the src tag below as needed -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" 
+             alt="Fortify cleaning rosters" 
+             class="w-full h-full object-cover">
+        <!-- Deep rich overlay to keep color scheme intact and maintain maximum text visibility -->
+        <div class="absolute inset-0 bg-brandBlue-800/85 backdrop-blur-[2px]"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">Ready to fortify your cleaning rosters?</h2>
+        <p class="text-brandBlue-100/90 text-xs sm:text-sm max-w-lg mx-auto font-normal leading-relaxed">
+            Get reliable, pre-trained commercial cleaning crew members dispatched straight to your Singapore facility within 24 to 48 hours.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
+            <a href="https://wa.me/6581918108?text=Hi!%20I%20want%20to%20get%20started%20with%20your%20commercial%20cleaning%20manpower." 
+               target="_blank" 
+               class="bg-white hover:bg-brandBlue-50 text-brandBlue-800 px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md">
+                Book Appointment
+            </a>
+            <a href="https://wa.me/6581918108?text=Hi!%20I%20have%20some%20questions%20regarding%20commercial%20cleaning%20crews." 
+               target="_blank" 
+               class="bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md flex items-center justify-center space-x-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>WhatsApp us!</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Minimal Footer -->
+<footer class="bg-[#FBFBFD] text-zinc-400 py-12 border-t border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center space-x-2.5">
+                <div class="w-6 h-6 bg-brandBlue-500 rounded-full flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="8" fill="none"/>
+                        <path d="M28 35 H72 M33 46 H67 M38 35 V58 C38 68, 44 68, 50 68 C56 68, 62 68, 62 58 V35 M50 35 V58" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M44 72 L42 80 M56 72 L58 80" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="text-xs font-bold text-[#1D1D1F]">鼎洁 DING CLEANING PTE LTD</span>
+            </div>
+
+            <!-- Footer Quick Links -->
+            <div class="flex flex-wrap justify-center gap-6 text-[11px] font-medium text-zinc-400">
+                <a href="#sectors" class="hover:text-zinc-600">Sectors</a>
+                <a href="#standards" class="hover:text-zinc-600">Inspection Guidelines</a>
+                <a href="#rates" class="hover:text-zinc-600">Standard Pricing</a>
+                <a href="#faqs" class="hover:text-zinc-600">FAQ Directory</a>
+            </div>
+
+            <p class="text-[10px] text-zinc-400 text-center md:text-right">&copy; 2026 鼎洁 DING CLEANING. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Action Button -->
+<a href="https://wa.me/6581918108?text=Hi%20there!%20I'm%20interested%20in%20securing%20cleaning%20manpower%20for%20my%20business." 
+   target="_blank" 
+   class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 rounded-full shadow-lg z-50 hover:scale-105 active:scale-95 transition-all flex items-center justify-center group"
+   aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 ease-out text-xs font-black whitespace-nowrap uppercase tracking-wider">
+        WhatsApp us!
+    </span>
+</a>
+
+<script>
+    // --- Mobile Drawer Toggle Logic ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.className = 'fa-solid fa-bars text-lg';
+        } else {
+            menuIcon.className = 'fa-solid fa-xmark text-lg';
+        }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.className = 'fa-solid fa-bars text-lg';
+        });
+    });
+
+    // --- Interactive Hotspot Information Data ---
+    const hotspotData = {
+        surface: {
+            title: "Sanitized Countertops",
+            desc: "All desk surfaces, counter edges, and heavy-use items are cleaned hourly using hospital-grade disinfectants.",
+            icon: "fa-shield-halved"
+        },
+        glass: {
+            title: "Streak-Free Partitions",
+            desc: "Glass partition walls and transparent elements are systematically polished using streak-free carbon fiber clothes.",
+            icon: "fa-sparkles"
+        },
+        flooring: {
+            title: "Floor Polish Maintenance",
+            desc: "Vacuuming & high-rpm marble restoration buffing treatments are structured weekly to minimize traffic scuffs.",
+            icon: "fa-broom"
+        },
+        ceiling: {
+            title: "Exhaust Dusting Control",
+            desc: "High exhaust ventilation ducting and overhead pendant light structures are cleared monthly to ensure clean workspace air.",
+            icon: "fa-wind"
+        }
+    };
+
+    const cardTitle = document.getElementById('hotspot-card-title');
+    const cardDesc = document.getElementById('hotspot-card-desc');
+    const cardIcon = document.getElementById('hotspot-card-icon');
+    const infoCard = document.getElementById('hotspot-info-card');
+
+    function showHotspot(key) {
+        if (hotspotData[key]) {
+            // Smoothly swap classes for transition effects
+            infoCard.style.opacity = '0';
+            infoCard.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                cardTitle.textContent = hotspotData[key].title;
+                cardDesc.textContent = hotspotData[key].desc;
+                cardIcon.className = `fa-solid ${hotspotData[key].icon} text-xs`;
+                
+                infoCard.style.opacity = '1';
+                infoCard.style.transform = 'translateY(0)';
+            }, 150);
+        }
+    }
+
+    // --- FAQ Accordion Toggle Logic ---
+    function toggleFaq(id) {
+        const content = document.getElementById(`faq-content-${id}`);
+        const chevron = document.getElementById(`faq-chevron-${id}`);
+        
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            chevron.style.transform = 'rotate(180deg)';
+        } else {
+            content.classList.add('hidden');
+            chevron.style.transform = 'rotate(0deg)';
+        }
+    }
+</script>
+</body>
+</html>
