@@ -21,7 +21,7 @@
                         brandBlue: {
                             50: '#f0f5ff',
                             100: '#e1eaff',
-                            500: '#0B4BB4', // Custom color matched from Screenshot 2026-07-08 at 10.52.31 PM.jpg
+                            500: '#0B4BB4', // Custom color matched from screenshot assets
                             600: '#0047BA', 
                             700: '#003ba1',
                             800: '#002f82',
@@ -82,7 +82,7 @@
                 <a href="#faqs" class="hover:text-brandBlue-500 transition-colors">FAQs</a>
             </nav>
 
-            <!-- Action button -->
+            <!-- Action button (Standard WhatsApp Green) -->
             <div class="flex items-center space-x-3">
                 <a href="https://wa.me/6581918108?text=Hi%20there!%20I%20would%20like%20to%20book%20an%20appointment%20to%20discuss%20cleaning%20manpower%20options." 
                    target="_blank" 
@@ -250,12 +250,12 @@
             <p class="text-xs text-zinc-500 mt-2">Table, Chair & Floor Washing: Every 2 Weeks</p>
         </div>
 
-        <!-- Workplace graphic mapping with interactive tooltips -->
-        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-zinc-200/80 bg-zinc-100 max-h-[480px]">
+        <!-- Workplace graphic mapping with interactive tooltips based on 851f95fb-0c96-447d-9c2d-ce777dd6eecb.jpeg layout -->
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-zinc-200/80 bg-zinc-100 max-h-[580px]">
             
             <img src="images/image7.webp" 
                  alt="Spotless Workspace Area" 
-                 class="w-full h-full object-cover max-h-[480px] filter brightness-[0.85]">
+                 class="w-full h-full object-cover max-h-[580px] filter brightness-[0.85]">
 
             <!-- Floating Tooltip Box (Updated dynamically by JS mouse events) -->
             <div id="hotspot-info-card" class="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-xs bg-[#FBFBFD]/95 backdrop-blur-md border border-zinc-200/60 p-4 rounded-xl shadow-lg transition-all duration-300 transform translate-y-0 opacity-100">
@@ -270,44 +270,77 @@
                 </div>
             </div>
 
-            <!-- Hotspot Dot 1 (Countertop) -->
-            <button class="absolute top-[52%] left-[48%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('surface')"
-                    onmouseover="showHotspot('surface')"
-                    aria-label="Surface Sanitization Hotspot">
+            <!-- Hotspot Dot 1 (High-Level Dusting) - At upper dark ceiling truss "here" -->
+            <button class="absolute top-[10%] left-[48%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('high_level')"
+                    onmouseover="showHotspot('high_level')"
+                    aria-label="High-Level Dusting Hotspot">
                 <span class="flex h-6 w-6 relative">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </span>
             </button>
 
-            <!-- Hotspot Dot 2 (Glass Partition) -->
-            <button class="absolute top-[35%] left-[28%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('glass')"
-                    onmouseover="showHotspot('glass')"
-                    aria-label="Glass Partitions Hotspot">
+            <!-- Hotspot Dot 2 (Light Fixture Cleaning) - At bright overhead circular light "here" -->
+            <button class="absolute top-[18%] left-[58%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('light_fixture')"
+                    onmouseover="showHotspot('light_fixture')"
+                    aria-label="Light Fixture Cleaning Hotspot">
                 <span class="flex h-6 w-6 relative">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </span>
             </button>
 
-            <!-- Hotspot Dot 3 (Polished Floor) -->
-            <button class="absolute top-[78%] left-[65%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('flooring')"
-                    onmouseover="showHotspot('flooring')"
-                    aria-label="Floor Maintenance Hotspot">
+            <!-- Hotspot Dot 3 (Pipe & Column Cleaning) - At high white vertical pillar pipe collar "here" -->
+            <button class="absolute top-[35%] left-[11%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('pipe_column')"
+                    onmouseover="showHotspot('pipe_column')"
+                    aria-label="Pipe & Column Cleaning Hotspot">
                 <span class="flex h-6 w-6 relative">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </span>
             </button>
 
-            <!-- Hotspot Dot 4 (Air Exhaust System) -->
-            <button class="absolute top-[20%] left-[75%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('ceiling')"
-                    onmouseover="showHotspot('ceiling')"
-                    aria-label="High Exhaust Dusting Hotspot">
+            <!-- Hotspot Dot 4 (Beam & Ledge Wiping) - At low white beam edge "here" -->
+            <button class="absolute top-[58%] left-[43%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('beam_ledge')"
+                    onmouseover="showHotspot('beam_ledge')"
+                    aria-label="Beam & Ledge Wiping Hotspot">
+                <span class="flex h-6 w-6 relative">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </span>
+            </button>
+
+            <!-- Hotspot Dot 5 (Table & Chair Washing) - At red column fire extinguisher / chair layout "here" -->
+            <button class="absolute top-[76%] left-[77%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('table_chair')"
+                    onmouseover="showHotspot('table_chair')"
+                    aria-label="Table & Chair Washing Hotspot">
+                <span class="flex h-6 w-6 relative">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </span>
+            </button>
+
+            <!-- Hotspot Dot 6 (Floor Washing) - At center floor walk corridor "clean 2 weeks once" -->
+            <button class="absolute top-[81%] left-[55%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('floor_washing')"
+                    onmouseover="showHotspot('floor_washing')"
+                    aria-label="Floor Washing Hotspot">
+                <span class="flex h-6 w-6 relative">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </span>
+            </button>
+
+            <!-- Hotspot Dot 7 (Spot Cleaning) - At cart/station foreground countertop "wipe clean Bird's poo" -->
+            <button class="absolute top-[85%] left-[36%] -translate-x-1/2 -translate-y-1/2 group outline-none"
+                    onclick="showHotspot('spot_cleaning')"
+                    onmouseover="showHotspot('spot_cleaning')"
+                    aria-label="Spot Cleaning Hotspot">
                 <span class="flex h-6 w-6 relative">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
@@ -480,7 +513,7 @@
 <!-- Plain Call-to-Action Section with Changeable Image Background -->
 <section class="py-24 text-white relative overflow-hidden bg-brandBlue-900">
     
-    <!-- CHANGEABLE BACKGROUND IMAGE CONTAINER: Replace the unsplash URL in the src tag below as needed -->
+    <!-- CHANGEABLE BACKGROUND IMAGE CONTAINER -->
     <div class="absolute inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" 
              alt="Fortify cleaning rosters" 
@@ -566,27 +599,42 @@
         });
     });
 
-    // --- Interactive Hotspot Information Data ---
+    // --- Interactive Hotspot Information Data mapped to 851f95fb-0c96-447d-9c2d-ce777dd6eecb.jpeg ---
     const hotspotData = {
-        surface: {
-            title: "Sanitized Countertops",
-            desc: "All desk surfaces, counter edges, and heavy-use items are cleaned hourly using hospital-grade disinfectants.",
-            icon: "fa-shield-halved"
-        },
-        glass: {
-            title: "Streak-Free Partitions",
-            desc: "Glass partition walls and transparent elements are systematically polished using streak-free carbon fiber clothes.",
-            icon: "fa-sparkles"
-        },
-        flooring: {
-            title: "Floor Polish Maintenance",
-            desc: "Vacuuming & high-rpm marble restoration buffing treatments are structured weekly to minimize traffic scuffs.",
+        high_level: {
+            title: "High-Level Dusting",
+            desc: "Dust removal from ceilings, beams, ledges, and other hard-to-reach areas.",
             icon: "fa-broom"
         },
-        ceiling: {
-            title: "Exhaust Dusting Control",
-            desc: "High exhaust ventilation ducting and overhead pendant light structures are cleared monthly to ensure clean workspace air.",
-            icon: "fa-wind"
+        light_fixture: {
+            title: "Light Fixture Cleaning",
+            desc: "Wiping and dusting of exposed bulbs, fittings, and surrounding surfaces.",
+            icon: "fa-lightbulb"
+        },
+        pipe_column: {
+            title: "Pipe & Column Cleaning",
+            desc: "Cleaning of overhead pipes, structural columns, and visible fixtures.",
+            icon: "fa-screwdriver-wrench"
+        },
+        beam_ledge: {
+            title: "Beam & Ledge Wiping",
+            desc: "Dust and dirt removal from beams, ledges, and elevated surfaces.",
+            icon: "fa-eraser"
+        },
+        table_chair: {
+            title: "Table & Chair Washing",
+            desc: "Scheduled washing of dining tables and chairs every two weeks.",
+            icon: "fa-chair"
+        },
+        floor_washing: {
+            title: "Floor Washing",
+            desc: "Thorough floor washing every two weeks to remove dirt and buildup.",
+            icon: "fa-soap"
+        },
+        spot_cleaning: {
+            title: "Spot Cleaning",
+            desc: "Immediate removal of bird droppings, spills, and visible stains when required.",
+            icon: "fa-hand-sparkles"
         }
     };
 
