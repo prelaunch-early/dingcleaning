@@ -39,8 +39,8 @@
     <style>
         html {
             scroll-behavior: smooth;
-            /* Increments base 12pt (16px) font size by exactly 2pt (making it 14pt / 18.66px) */
-            font-size: 18.66px; 
+            /* Increments base 12pt (16px) font size by exactly 3pt (making it 15pt / 20px) */
+            font-size: 20px; 
         }
         /* Custom pulse visual for hotspot inspection indicators */
         @keyframes custom-pulse {
@@ -59,6 +59,13 @@
         }
         .pulse-dot {
             animation: custom-pulse 2s infinite;
+        }
+
+        /* Direct mobile active support overrides for interactive hotspot components */
+        .tooltip-active {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            pointer-events: auto !important;
         }
     </style>
 </head>
@@ -251,108 +258,193 @@
         </div>
 
         <!-- Workplace graphic mapping with interactive tooltips based on 851f95fb-0c96-447d-9c2d-ce777dd6eecb.jpeg layout -->
-        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-zinc-200/80 bg-zinc-100 max-h-[580px]">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-zinc-200/80 bg-zinc-100 max-h-[580px] select-none" id="hotspots-image-container">
             
             <img src="images/image7.webp" 
                  alt="Spotless Workspace Area" 
-                 class="w-full h-full object-cover max-h-[580px] filter brightness-[0.85]">
+                 class="w-full h-full object-cover max-h-[580px] filter brightness-[0.85] block">
 
-            <!-- Floating Tooltip Box (Updated dynamically by JS mouse events) -->
-            <div id="hotspot-info-card" class="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-xs bg-[#FBFBFD]/95 backdrop-blur-md border border-zinc-200/60 p-4 rounded-xl shadow-lg transition-all duration-300 transform translate-y-0 opacity-100">
-                <div class="flex items-start space-x-2.5">
-                    <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
-                        <i class="fa-solid fa-circle-info text-xs" id="hotspot-card-icon"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1" id="hotspot-card-title">Sanitization Inspection</h4>
-                        <p class="text-[11px] text-zinc-600 leading-relaxed" id="hotspot-card-desc">Hover or click any interactive hotspot pulse indicator on the workspace layout to explore standard details.</p>
+            <!-- Hotspot Dot 1 (High-Level Dusting) - At upper dark ceiling truss "here" (Arrow pointing up to ceiling) -->
+            <div class="absolute top-[10%] left-[48%] -translate-x-1/2 -translate-y-1/2 group z-30">
+                <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
+                        onclick="selectHotspot('high_level', event)"
+                        onmouseover="selectHotspot('high_level', event)"
+                        aria-label="High-Level Dusting Hotspot">
+                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
+                </button>
+                <!-- Tooltip Down (Arrow top center) -->
+                <div id="tooltip-high_level" 
+                     class="hotspot-tooltip pointer-events-none absolute top-full mt-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-top
+                            before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-b-white/95">
+                    <div class="flex items-start space-x-2.5 text-left">
+                        <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                            <i class="fa-solid fa-broom text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1">High-Level Dusting</h4>
+                            <p class="text-[11px] text-zinc-600 leading-normal">Dust removal from ceilings, beams, ledges, and other hard-to-reach areas.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Hotspot Dot 1 (High-Level Dusting) - At upper dark ceiling truss "here" -->
-            <button class="absolute top-[10%] left-[48%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('high_level')"
-                    onmouseover="showHotspot('high_level')"
-                    aria-label="High-Level Dusting Hotspot">
-                <span class="flex h-6 w-6 relative">
-                    <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
-                </span>
-            </button>
-
             <!-- Hotspot Dot 2 (Light Fixture Cleaning) - At bright overhead circular light "here" -->
-            <button class="absolute top-[18%] left-[58%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('light_fixture')"
-                    onmouseover="showHotspot('light_fixture')"
-                    aria-label="Light Fixture Cleaning Hotspot">
-                <span class="flex h-6 w-6 relative">
+            <div class="absolute top-[18%] left-[58%] -translate-x-1/2 -translate-y-1/2 group z-30">
+                <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
+                        onclick="selectHotspot('light_fixture', event)"
+                        onmouseover="selectHotspot('light_fixture', event)"
+                        aria-label="Light Fixture Cleaning Hotspot">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
-                </span>
-            </button>
+                </button>
+                <!-- Tooltip Down (Arrow top center) -->
+                <div id="tooltip-light_fixture" 
+                     class="hotspot-tooltip pointer-events-none absolute top-full mt-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-top
+                            before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-b-white/95">
+                    <div class="flex items-start space-x-2.5 text-left">
+                        <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                            <i class="fa-solid fa-lightbulb text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1">Light Fixture Cleaning</h4>
+                            <p class="text-[11px] text-zinc-600 leading-normal">Wiping and dusting of exposed bulbs, fittings, and surrounding surfaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Hotspot Dot 3 (Pipe & Column Cleaning) - At high white vertical pillar pipe collar "here" -->
-            <button class="absolute top-[35%] left-[11%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('pipe_column')"
-                    onmouseover="showHotspot('pipe_column')"
-                    aria-label="Pipe & Column Cleaning Hotspot">
-                <span class="flex h-6 w-6 relative">
+            <div class="absolute top-[35%] left-[11%] -translate-x-1/2 -translate-y-1/2 group z-30">
+                <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
+                        onclick="selectHotspot('pipe_column', event)"
+                        onmouseover="selectHotspot('pipe_column', event)"
+                        aria-label="Pipe & Column Cleaning Hotspot">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
-                </span>
-            </button>
+                </button>
+                <!-- Tooltip Right (Arrow left middle) -->
+                <div id="tooltip-pipe_column" 
+                     class="hotspot-tooltip pointer-events-none absolute left-full ml-3 top-1/2 -translate-y-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-left
+                            before:content-[''] before:absolute before:right-full before:top-1/2 before:-translate-y-1/2 before:border-8 before:border-transparent before:border-r-white/95">
+                    <div class="flex items-start space-x-2.5 text-left">
+                        <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                            <i class="fa-solid fa-screwdriver-wrench text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1">Pipe & Column Cleaning</h4>
+                            <p class="text-[11px] text-zinc-600 leading-normal">Cleaning of overhead pipes, structural columns, and visible fixtures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Hotspot Dot 4 (Beam & Ledge Wiping) - At low white beam edge "here" -->
-            <button class="absolute top-[58%] left-[43%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('beam_ledge')"
-                    onmouseover="showHotspot('beam_ledge')"
-                    aria-label="Beam & Ledge Wiping Hotspot">
-                <span class="flex h-6 w-6 relative">
+            <div class="absolute top-[58%] left-[43%] -translate-x-1/2 -translate-y-1/2 group z-30">
+                <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
+                        onclick="selectHotspot('beam_ledge', event)"
+                        onmouseover="selectHotspot('beam_ledge', event)"
+                        aria-label="Beam & Ledge Wiping Hotspot">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
-                </span>
-            </button>
+                </button>
+                <!-- Tooltip Up (Arrow bottom center) -->
+                <div id="tooltip-beam_ledge" 
+                     class="hotspot-tooltip pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-bottom
+                            before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/95">
+                    <div class="flex items-start space-x-2.5 text-left">
+                        <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                            <i class="fa-solid fa-eraser text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1">Beam & Ledge Wiping</h4>
+                            <p class="text-[11px] text-zinc-600 leading-normal">Dust and dirt removal from beams, ledges, and elevated surfaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Hotspot Dot 5 (Table & Chair Washing) - At red column fire extinguisher / chair layout "here" -->
-            <button class="absolute top-[76%] left-[77%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('table_chair')"
-                    onmouseover="showHotspot('table_chair')"
-                    aria-label="Table & Chair Washing Hotspot">
-                <span class="flex h-6 w-6 relative">
+            <div class="absolute top-[76%] left-[77%] -translate-x-1/2 -translate-y-1/2 group z-30">
+                <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
+                        onclick="selectHotspot('table_chair', event)"
+                        onmouseover="selectHotspot('table_chair', event)"
+                        aria-label="Table & Chair Washing Hotspot">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
-                </span>
-            </button>
+                </button>
+                <!-- Tooltip Left (Arrow right middle) -->
+                <div id="tooltip-table_chair" 
+                     class="hotspot-tooltip pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-right
+                            before:content-[''] before:absolute before:left-full before:top-1/2 before:-translate-y-1/2 before:border-8 before:border-transparent before:border-l-white/95">
+                    <div class="flex items-start space-x-2.5 text-left">
+                        <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                            <i class="fa-solid fa-chair text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1">Table & Chair Washing</h4>
+                            <p class="text-[11px] text-zinc-600 leading-normal">Scheduled washing of dining tables and chairs every two weeks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Hotspot Dot 6 (Floor Washing) - At center floor walk corridor "clean 2 weeks once" -->
-            <button class="absolute top-[81%] left-[55%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('floor_washing')"
-                    onmouseover="showHotspot('floor_washing')"
-                    aria-label="Floor Washing Hotspot">
-                <span class="flex h-6 w-6 relative">
+            <div class="absolute top-[81%] left-[55%] -translate-x-1/2 -translate-y-1/2 group z-30">
+                <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
+                        onclick="selectHotspot('floor_washing', event)"
+                        onmouseover="selectHotspot('floor_washing', event)"
+                        aria-label="Floor Washing Hotspot">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
-                </span>
-            </button>
+                </button>
+                <!-- Tooltip Up (Arrow bottom center) -->
+                <div id="tooltip-floor_washing" 
+                     class="hotspot-tooltip pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-bottom
+                            before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/95">
+                    <div class="flex items-start space-x-2.5 text-left">
+                        <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                            <i class="fa-solid fa-soap text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1">Floor Washing</h4>
+                            <p class="text-[11px] text-zinc-600 leading-normal">Thorough floor washing every two weeks to remove dirt and buildup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Hotspot Dot 7 (Spot Cleaning) - At cart/station foreground countertop "wipe clean Bird's poo" -->
-            <button class="absolute top-[85%] left-[36%] -translate-x-1/2 -translate-y-1/2 group outline-none"
-                    onclick="showHotspot('spot_cleaning')"
-                    onmouseover="showHotspot('spot_cleaning')"
-                    aria-label="Spot Cleaning Hotspot">
-                <span class="flex h-6 w-6 relative">
+            <div class="absolute top-[85%] left-[36%] -translate-x-1/2 -translate-y-1/2 group z-30">
+                <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
+                        onclick="selectHotspot('spot_cleaning', event)"
+                        onmouseover="selectHotspot('spot_cleaning', event)"
+                        aria-label="Spot Cleaning Hotspot">
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
-                </span>
-            </button>
+                </button>
+                <!-- Tooltip Up (Arrow bottom center) -->
+                <div id="tooltip-spot_cleaning" 
+                     class="hotspot-tooltip pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-bottom
+                            before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/95">
+                    <div class="flex items-start space-x-2.5 text-left">
+                        <div class="w-7 h-7 rounded-full bg-brandBlue-50 flex items-center justify-center text-brandBlue-500 shrink-0 mt-0.5">
+                            <i class="fa-solid fa-hand-sparkles text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandBlue-500 uppercase tracking-wide leading-none mb-1">Spot Cleaning</h4>
+                            <p class="text-[11px] text-zinc-600 leading-normal">Immediate removal of bird droppings, spills, and visible stains when required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
     </div>
 </section>
 
-<!-- Clean, Minimalist Apple-Style Hourly Rates Section -->
+<!-- Clean, Minimalist Apple-Style Hourly Rates Section with Premium Blue Background -->
 <section id="rates" class="py-24 bg-brandBlue-500 text-white border-t border-brandBlue-600">
     <div class="max-w-4xl mx-auto px-6">
         
@@ -382,7 +474,7 @@
 
             <!-- Price Rate 2 -->
             <div class="bg-white border-2 border-brandBlue-500 rounded-2xl p-8 text-center flex flex-col justify-between hover:shadow-md transition-all relative">
-                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brandBlue-500 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brandBlue-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
                     Most Popular
                 </div>
                 <div>
@@ -599,66 +691,36 @@
         });
     });
 
-    // --- Interactive Hotspot Information Data mapped to 851f95fb-0c96-447d-9c2d-ce777dd6eecb.jpeg ---
-    const hotspotData = {
-        high_level: {
-            title: "High-Level Dusting",
-            desc: "Dust removal from ceilings, beams, ledges, and other hard-to-reach areas.",
-            icon: "fa-broom"
-        },
-        light_fixture: {
-            title: "Light Fixture Cleaning",
-            desc: "Wiping and dusting of exposed bulbs, fittings, and surrounding surfaces.",
-            icon: "fa-lightbulb"
-        },
-        pipe_column: {
-            title: "Pipe & Column Cleaning",
-            desc: "Cleaning of overhead pipes, structural columns, and visible fixtures.",
-            icon: "fa-screwdriver-wrench"
-        },
-        beam_ledge: {
-            title: "Beam & Ledge Wiping",
-            desc: "Dust and dirt removal from beams, ledges, and elevated surfaces.",
-            icon: "fa-eraser"
-        },
-        table_chair: {
-            title: "Table & Chair Washing",
-            desc: "Scheduled washing of dining tables and chairs every two weeks.",
-            icon: "fa-chair"
-        },
-        floor_washing: {
-            title: "Floor Washing",
-            desc: "Thorough floor washing every two weeks to remove dirt and buildup.",
-            icon: "fa-soap"
-        },
-        spot_cleaning: {
-            title: "Spot Cleaning",
-            desc: "Immediate removal of bird droppings, spills, and visible stains when required.",
-            icon: "fa-hand-sparkles"
+    // --- STREAMING_CHUNK: Initializing interactive hotspot toggles for mobile viewports... ---
+    // Handle hotspots on hover (desktop) and toggle click (mobile screen boundaries)
+    function selectHotspot(id, event) {
+        if (event) {
+            event.stopPropagation(); // Avoid triggering document body click listeners
         }
-    };
-
-    const cardTitle = document.getElementById('hotspot-card-title');
-    const cardDesc = document.getElementById('hotspot-card-desc');
-    const cardIcon = document.getElementById('hotspot-card-icon');
-    const infoCard = document.getElementById('hotspot-info-card');
-
-    function showHotspot(key) {
-        if (hotspotData[key]) {
-            // Smoothly swap classes for transition effects
-            infoCard.style.opacity = '0';
-            infoCard.style.transform = 'translateY(10px)';
-            
-            setTimeout(() => {
-                cardTitle.textContent = hotspotData[key].title;
-                cardDesc.textContent = hotspotData[key].desc;
-                cardIcon.className = `fa-solid ${hotspotData[key].icon} text-xs`;
-                
-                infoCard.style.opacity = '1';
-                infoCard.style.transform = 'translateY(0)';
-            }, 150);
+        
+        const currentTooltip = document.getElementById(`tooltip-${id}`);
+        const allTooltips = document.querySelectorAll('.hotspot-tooltip');
+        
+        // Check if clicked tooltip is currently visible on mobile
+        const isAlreadyVisible = currentTooltip.classList.contains('tooltip-active');
+        
+        // Clear all active classes
+        allTooltips.forEach(tooltip => {
+            tooltip.classList.remove('tooltip-active');
+        });
+        
+        // If it wasn't visible before, turn it on
+        if (!isAlreadyVisible && currentTooltip) {
+            currentTooltip.classList.add('tooltip-active');
         }
     }
+
+    // Document click listener to dismiss active bubbles when user taps elsewhere
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.hotspot-tooltip').forEach(tooltip => {
+            tooltip.classList.remove('tooltip-active');
+        });
+    });
 
     // --- FAQ Accordion Toggle Logic ---
     function toggleFaq(id) {
