@@ -3,7 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Cleaners Fast. | DING CLEANING</title>
+    
+    <!-- Primary Search Engine SEO Meta Tags -->
+    <title>Get Cleaners Fast | Singapore Commercial Cleaning Manpower</title>
+    <meta name="description" content="Reliable commercial cleaning manpower in Singapore. Trained cleaners for food courts, hotels, offices, coffee shops & restaurants. Dispatched within 24–48 hours.">
+    <meta name="keywords" content="commercial cleaning Singapore, hire cleaners SG, cleaning manpower, dishwashers Singapore, food court cleaner, office cleaning Singapore, table cleaners">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dingcleaning.com/">
+
+    <!-- Geographic & Regional Search Signals for Google Singapore -->
+    <meta name="geo.region" content="SG">
+    <meta name="geo.placename" content="Singapore">
+    <meta name="geo.position" content="1.3521;103.8198">
+    <meta name="ICBM" content="1.3521, 103.8198">
+
+    <!-- Open Graph Meta Tags for WhatsApp & Social Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Get Cleaners Fast | DING CLEANING Singapore">
+    <meta property="og:description" content="Fast, reliable commercial cleaning manpower for Singapore businesses. Transparent hourly rates with zero hidden admin fees.">
+    <meta property="og:image" content="images/heroimage.webp">
+    <meta property="og:locale" content="en_SG">
+
+    <!-- JSON-LD Structured Data Schema for Local Search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "DING CLEANING",
+      "image": "images/logo.webp",
+      "description": "Singapore commercial cleaning manpower solutions provider.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SG",
+        "addressLocality": "Singapore"
+      },
+      "telephone": "+6581918108",
+      "priceRange": "$$"
+    }
+    </script>
+
     <!-- Tailwind CSS for modern responsive layout design -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for clean minimal icons -->
@@ -21,7 +59,7 @@
                         brandBlue: {
                             50: '#f0f5ff',
                             100: '#e1eaff',
-                            500: '#0B4BB4', // Custom color matched from screenshot assets
+                            500: '#0B4BB4',
                             600: '#0047BA', 
                             700: '#003ba1',
                             800: '#002f82',
@@ -39,7 +77,7 @@
     <style>
         html {
             scroll-behavior: smooth;
-            /* Increments base 12pt (16px) font size by exactly 3pt (making it 15pt / 20px) */
+            /* Base font size set to 20px (+3pt overall scale increase) */
             font-size: 20px; 
         }
         /* Custom pulse visual for hotspot inspection indicators */
@@ -61,7 +99,7 @@
             animation: custom-pulse 2s infinite;
         }
 
-        /* Direct mobile active support overrides for interactive hotspot components */
+        /* Direct active support overrides for interactive hotspot components */
         .tooltip-active {
             opacity: 1 !important;
             transform: scale(1) !important;
@@ -86,6 +124,7 @@
                 <a href="#sectors" class="hover:text-brandBlue-500 transition-colors">Sectors</a>
                 <a href="#standards" class="hover:text-brandBlue-500 transition-colors">Our Standards</a>
                 <a href="#rates" class="hover:text-brandBlue-500 transition-colors">Rates</a>
+                <a href="#gallery-carousel" class="hover:text-brandBlue-500 transition-colors">Gallery</a>
                 <a href="#faqs" class="hover:text-brandBlue-500 transition-colors">FAQs</a>
             </nav>
 
@@ -112,15 +151,16 @@
         <a href="#sectors" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">Sectors</a>
         <a href="#standards" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">Our Standards</a>
         <a href="#rates" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">Rates</a>
+        <a href="#gallery-carousel" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">Gallery</a>
         <a href="#faqs" class="block py-1 text-xs font-medium text-zinc-600 hover:text-brandBlue-500">FAQs</a>
     </div>
 </header>
 
-<!-- Elegant Minimalist Hero Section with Large Image (Inspired by Journal X layout) -->
+<!-- Elegant Minimalist Hero Section -->
 <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
     <!-- Immersive Photo Background -->
     <div class="absolute inset-0 z-0">
-        <img src="images/heroimage.png" 
+        <img src="images/heroimage.webp" 
              alt="Pristine Corporate Workspace Space" 
              class="w-full h-full object-cover">
         <!-- Deep overlay for high-contrast typography -->
@@ -130,7 +170,7 @@
     <!-- Hero Content Interface -->
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white space-y-6 pt-16 pb-20">
         
-        <!-- Minimalist Pill Badge (Text scaled down to 17px) -->
+        <!-- Minimalist Pill Badge -->
         <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/10">
             <span class="w-2.5 h-2.5 rounded-full bg-[#25D366]"></span>
             <span class="text-[17px] font-semibold text-zinc-200 leading-normal tracking-wide">Singapore’s Trusted Cleaning Manpower Partner</span>
@@ -158,11 +198,11 @@
     </div>
 </section>
 
-<!-- Target Sectors Grid (Inspired by Journal X Article Categories) -->
+<!-- Target Sectors Grid -->
 <section id="sectors" class="py-24 border-t border-zinc-200/60 bg-white">
     <div class="max-w-6xl mx-auto px-6">
         
-        <!-- Centralised Title Header Section (Tailored Solutions scaled down to 16px) -->
+        <!-- Centralised Title Header Section -->
         <div class="text-center mb-12">
             <p class="text-[16px] uppercase tracking-wider font-bold text-brandBlue-500 mb-1">Tailored Solutions</p>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1D1D1F]">Industries We Support</h2>
@@ -174,7 +214,7 @@
             <!-- Frame 1: Food Courts -->
             <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
                 <img src="images/image1.webp" 
-                     alt="Food Courts and Hawker Centers" 
+                     alt="Singapore Food Courts and Hawker Centers" 
                      class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
                 <div class="absolute bottom-6 left-6 right-6 text-white">
@@ -185,7 +225,7 @@
             <!-- Frame 2: Hotels & Lounges -->
             <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
                 <img src="images/image2.webp" 
-                     alt="Hotels and Luxury Lounges" 
+                     alt="Hotels and Luxury Lounges Singapore" 
                      class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
                 <div class="absolute bottom-6 left-6 right-6 text-white">
@@ -196,7 +236,7 @@
             <!-- Frame 3: Office Buildings -->
             <div class="group relative h-[380px] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
                 <img src="images/image3.webp" 
-                     alt="Corporate Office Buildings" 
+                     alt="Corporate Office Buildings Singapore" 
                      class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
                 <div class="absolute bottom-6 left-6 right-6 text-white">
@@ -251,21 +291,20 @@
 <section id="standards" class="py-24 bg-white border-t border-zinc-200/60">
     <div class="max-w-4xl mx-auto px-6">
         
-        <!-- Header texts scaled down to 16px and 21px -->
         <div class="text-center mb-10">
             <p class="text-[16px] uppercase tracking-wider font-bold text-brandBlue-500 mb-1">Interactive Quality Inspection</p>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1D1D1F]">High Dusting/Wiping</h2>
             <p class="text-[21px] text-zinc-500 mt-2 font-medium">Table, Chair & Floor Washing: Every 2 Weeks</p>
         </div>
 
-        <!-- Workplace graphic mapping with interactive tooltips based on 851f95fb-0c96-447d-9c2d-ce777dd6eecb.jpeg layout -->
+        <!-- Workplace graphic mapping with interactive tooltips -->
         <div class="relative rounded-2xl overflow-hidden shadow-xl border border-zinc-200/80 bg-zinc-100 max-h-[580px] select-none" id="hotspots-image-container">
             
             <img src="images/image7.webp" 
-                 alt="Spotless Workspace Area" 
+                 alt="Spotless Workspace Inspection Blueprint Area" 
                  class="w-full h-full object-cover max-h-[580px] filter brightness-[0.85] block">
 
-            <!-- Hotspot Dot 1 (High-Level Dusting) - At upper dark ceiling truss "here" (Arrow pointing up to ceiling) -->
+            <!-- Hotspot Dot 1 (High-Level Dusting) -->
             <div class="absolute top-[10%] left-[48%] -translate-x-1/2 -translate-y-1/2 group z-30">
                 <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
                         onclick="selectHotspot('high_level', event)"
@@ -274,7 +313,6 @@
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </button>
-                <!-- Tooltip Down (Arrow top center) -->
                 <div id="tooltip-high_level" 
                      class="hotspot-tooltip pointer-events-none absolute top-full mt-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-top
                             before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-b-white/95">
@@ -290,7 +328,7 @@
                 </div>
             </div>
 
-            <!-- Hotspot Dot 2 (Light Fixture Cleaning) - At bright overhead circular light "here" -->
+            <!-- Hotspot Dot 2 (Light Fixture Cleaning) -->
             <div class="absolute top-[18%] left-[58%] -translate-x-1/2 -translate-y-1/2 group z-30">
                 <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
                         onclick="selectHotspot('light_fixture', event)"
@@ -299,7 +337,6 @@
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </button>
-                <!-- Tooltip Down (Arrow top center) -->
                 <div id="tooltip-light_fixture" 
                      class="hotspot-tooltip pointer-events-none absolute top-full mt-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-top
                             before:content-[''] before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-b-white/95">
@@ -315,7 +352,7 @@
                 </div>
             </div>
 
-            <!-- Hotspot Dot 3 (Pipe & Column Cleaning) - At high white vertical pillar pipe collar "here" -->
+            <!-- Hotspot Dot 3 (Pipe & Column Cleaning) -->
             <div class="absolute top-[35%] left-[11%] -translate-x-1/2 -translate-y-1/2 group z-30">
                 <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
                         onclick="selectHotspot('pipe_column', event)"
@@ -324,7 +361,6 @@
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </button>
-                <!-- Tooltip Right (Arrow left middle) -->
                 <div id="tooltip-pipe_column" 
                      class="hotspot-tooltip pointer-events-none absolute left-full ml-3 top-1/2 -translate-y-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-left
                             before:content-[''] before:absolute before:right-full before:top-1/2 before:-translate-y-1/2 before:border-8 before:border-transparent before:border-r-white/95">
@@ -340,7 +376,7 @@
                 </div>
             </div>
 
-            <!-- Hotspot Dot 4 (Beam & Ledge Wiping) - At low white beam edge "here" -->
+            <!-- Hotspot Dot 4 (Beam & Ledge Wiping) -->
             <div class="absolute top-[58%] left-[43%] -translate-x-1/2 -translate-y-1/2 group z-30">
                 <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
                         onclick="selectHotspot('beam_ledge', event)"
@@ -349,7 +385,6 @@
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </button>
-                <!-- Tooltip Up (Arrow bottom center) -->
                 <div id="tooltip-beam_ledge" 
                      class="hotspot-tooltip pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-bottom
                             before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/95">
@@ -365,7 +400,7 @@
                 </div>
             </div>
 
-            <!-- Hotspot Dot 5 (Table & Chair Washing) - At red column fire extinguisher / chair layout "here" -->
+            <!-- Hotspot Dot 5 (Table & Chair Washing) -->
             <div class="absolute top-[76%] left-[77%] -translate-x-1/2 -translate-y-1/2 group z-30">
                 <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
                         onclick="selectHotspot('table_chair', event)"
@@ -374,7 +409,6 @@
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </button>
-                <!-- Tooltip Left (Arrow right middle) -->
                 <div id="tooltip-table_chair" 
                      class="hotspot-tooltip pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-right
                             before:content-[''] before:absolute before:left-full before:top-1/2 before:-translate-y-1/2 before:border-8 before:border-transparent before:border-l-white/95">
@@ -390,7 +424,7 @@
                 </div>
             </div>
 
-            <!-- Hotspot Dot 6 (Floor Washing) - At center floor walk corridor "clean 2 weeks once" -->
+            <!-- Hotspot Dot 6 (Floor Washing) -->
             <div class="absolute top-[81%] left-[55%] -translate-x-1/2 -translate-y-1/2 group z-30">
                 <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
                         onclick="selectHotspot('floor_washing', event)"
@@ -399,7 +433,6 @@
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-50 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </button>
-                <!-- Tooltip Up (Arrow bottom center) -->
                 <div id="tooltip-floor_washing" 
                      class="hotspot-tooltip pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-bottom
                             before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/95">
@@ -415,7 +448,7 @@
                 </div>
             </div>
 
-            <!-- Hotspot Dot 7 (Spot Cleaning) - At cart/station foreground countertop "wipe clean Bird's poo" -->
+            <!-- Hotspot Dot 7 (Spot Cleaning) -->
             <div class="absolute top-[85%] left-[36%] -translate-x-1/2 -translate-y-1/2 group z-30">
                 <button class="outline-none flex h-6 w-6 relative items-center justify-center cursor-pointer"
                         onclick="selectHotspot('spot_cleaning', event)"
@@ -424,7 +457,6 @@
                     <span class="pulse-dot absolute inline-flex h-full w-full rounded-full bg-brandBlue-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-6 w-6 bg-brandBlue-500 border-2 border-white items-center justify-center text-white"><i class="fa-solid fa-circle text-[4px]"></i></span>
                 </button>
-                <!-- Tooltip Up (Arrow bottom center) -->
                 <div id="tooltip-spot_cleaning" 
                      class="hotspot-tooltip pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-md border border-zinc-200/80 p-4 rounded-xl shadow-xl transition-all duration-200 opacity-0 scale-95 md:group-hover:opacity-100 md:group-hover:scale-100 md:group-hover:pointer-events-auto z-40 origin-bottom
                             before:content-[''] before:absolute before:top-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-transparent before:border-t-white/95">
@@ -445,24 +477,22 @@
     </div>
 </section>
 
-<!-- Clean, Minimalist Apple-Style Hourly Rates Section with Premium Blue Background -->
+<!-- Hourly Rates Section with Premium Blue Background -->
 <section id="rates" class="py-24 bg-brandBlue-500 text-white border-t border-brandBlue-600">
     <div class="max-w-4xl mx-auto px-6">
         
-        <!-- Header texts scaled down to 16px and 21px -->
         <div class="text-center mb-16">
             <p class="text-[16px] uppercase tracking-wider font-bold text-brandBlue-100 mb-1">Transparent Costing</p>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Simple Hourly Rates</h2>
             <p class="text-[21px] text-brandBlue-50 mt-2 font-medium">Zero hidden administration overhead. Pay exactly for the operational support hours you schedule.</p>
         </div>
 
-        <!-- Structured Price Rate Cards -->
+        <!-- Price Rate Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <!-- Price Rate 1 -->
             <div class="bg-white border border-zinc-200 rounded-2xl p-8 text-center flex flex-col justify-between hover:border-zinc-300 transition-all shadow-sm">
                 <div>
-                    <!-- Badge scaled down to 16px -->
                     <span class="text-[16px] uppercase font-bold tracking-wider text-zinc-400 block mb-2">Standard Areas</span>
                     <h3 class="text-base font-bold text-[#1D1D1F] mb-4">1 x Cleaner</h3>
                     <div class="my-4">
@@ -481,7 +511,6 @@
                     Most Popular
                 </div>
                 <div>
-                    <!-- Badge scaled down to 16px -->
                     <span class="text-[16px] uppercase font-bold tracking-wider text-brandBlue-500 block mb-2 mt-1">Dining Halls</span>
                     <h3 class="text-base font-bold text-[#1D1D1F] mb-4">1 x Table Cleaner</h3>
                     <div class="my-4">
@@ -497,7 +526,6 @@
             <!-- Price Rate 3 -->
             <div class="bg-white border border-zinc-200 rounded-2xl p-8 text-center flex flex-col justify-between hover:border-zinc-300 transition-all shadow-sm">
                 <div>
-                    <!-- Badge scaled down to 16px -->
                     <span class="text-[16px] uppercase font-bold tracking-wider text-zinc-400 block mb-2">F&B High-Volume</span>
                     <h3 class="text-base font-bold text-[#1D1D1F] mb-4">1 x Dishwasher</h3>
                     <div class="my-4">
@@ -524,17 +552,89 @@
     </div>
 </section>
 
+<!-- Minimalist Gallery Carousel Section -->
+<section id="gallery-carousel" class="hidden py-24 bg-[#FBFBFD] border-t border-zinc-200/60 overflow-hidden" style="display: none;">
+    <div class="max-w-6xl mx-auto px-6 relative">
+        
+        <div class="text-center mb-12">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1D1D1F]">Project Gallery</h2>
+        </div>
+
+        <!-- Carousel Outer Window -->
+        <div class="relative px-2 sm:px-12">
+            <!-- Navigation Buttons -->
+            <button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-brandBlue-500 hover:bg-brandBlue-600 text-white flex items-center justify-center shadow-md transition-all focus:outline-none hover:scale-105 active:scale-95" aria-label="Previous Slide">
+                <i class="fa-solid fa-chevron-left text-sm"></i>
+            </button>
+            <button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-brandBlue-500 hover:bg-brandBlue-600 text-white flex items-center justify-center shadow-md transition-all focus:outline-none hover:scale-105 active:scale-95" aria-label="Next Slide">
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+            </button>
+
+            <!-- Slide Viewport -->
+            <div class="overflow-hidden">
+                <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+                    
+                    <!-- Slide 1 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="rounded-2xl overflow-hidden bg-white border border-zinc-200/60 shadow-sm h-full flex flex-col">
+                            <img src="images/image1.webp" alt="Food Court Cleaning Showcase" class="w-full h-56 object-cover hover:scale-[1.02] transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0B4BB4/FFF?text=Food+Courts'">
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="rounded-2xl overflow-hidden bg-white border border-zinc-200/60 shadow-sm h-full flex flex-col">
+                            <img src="images/image2.webp" alt="Hotel Public Lounge Showcase" class="w-full h-56 object-cover hover:scale-[1.02] transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0B4BB4/FFF?text=Hotels'">
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="rounded-2xl overflow-hidden bg-white border border-zinc-200/60 shadow-sm h-full flex flex-col">
+                            <img src="images/image3.webp" alt="Office Building Showcase" class="w-full h-56 object-cover hover:scale-[1.02] transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0B4BB4/FFF?text=Offices'">
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="rounded-2xl overflow-hidden bg-white border border-zinc-200/60 shadow-sm h-full flex flex-col">
+                            <img src="images/image4.webp" alt="Neighborhood Coffee Shop Showcase" class="w-full h-56 object-cover hover:scale-[1.02] transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0B4BB4/FFF?text=Coffee+Shops'">
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="rounded-2xl overflow-hidden bg-white border border-zinc-200/60 shadow-sm h-full flex flex-col">
+                            <img src="images/image5.webp" alt="F&B Restaurant Showcase" class="w-full h-56 object-cover hover:scale-[1.02] transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0B4BB4/FFF?text=Restaurants'">
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="w-full md:w-1/3 shrink-0 px-3">
+                        <div class="rounded-2xl overflow-hidden bg-white border border-zinc-200/60 shadow-sm h-full flex flex-col">
+                            <img src="images/image6.webp" alt="Exhibition Showroom Showcase" class="w-full h-56 object-cover hover:scale-[1.02] transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0B4BB4/FFF?text=Showrooms'">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Dynamic Indicator Dots -->
+            <div id="carousel-indicators" class="flex justify-center space-x-2 mt-8"></div>
+        </div>
+
+    </div>
+</section>
+
 <!-- Deployments & Bookings FAQ Accordion -->
 <section id="faqs" class="py-24 bg-white border-t border-zinc-200/60">
     <div class="max-w-3xl mx-auto px-6">
         
-        <!-- Header text scaled down to 16px -->
         <div class="text-center mb-16">
             <p class="text-[16px] uppercase tracking-wider font-bold text-brandBlue-500 mb-1">Knowledge Hub</p>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1D1D1F]">Deployment FAQs</h2>
         </div>
 
-        <!-- 6 Complete Core Business Questions -->
         <div class="space-y-3">
             
             <!-- Accordion item 1 -->
@@ -610,13 +710,10 @@
 
 <!-- Plain Call-to-Action Section with Changeable Image Background -->
 <section class="py-24 text-white relative overflow-hidden bg-brandBlue-900">
-    
-    <!-- CHANGEABLE BACKGROUND IMAGE CONTAINER -->
     <div class="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" 
+        <img src="images/heroimage.webp" 
              alt="Fortify cleaning rosters" 
              class="w-full h-full object-cover">
-        <!-- Deep rich overlay to keep color scheme intact and maintain maximum text visibility -->
         <div class="absolute inset-0 bg-brandBlue-800/85 backdrop-blur-[2px]"></div>
     </div>
     
@@ -656,10 +753,11 @@
                 <a href="#sectors" class="hover:text-zinc-600">Sectors</a>
                 <a href="#standards" class="hover:text-zinc-600">Inspection Guidelines</a>
                 <a href="#rates" class="hover:text-zinc-600">Standard Pricing</a>
+                <a href="#gallery-carousel" class="hover:text-zinc-600">Gallery</a>
                 <a href="#faqs" class="hover:text-zinc-600">FAQ Directory</a>
             </div>
 
-            <p class="text-[10px] text-zinc-400 text-center md:text-right">&copy; 2026. All Rights Reserved.</p>
+            <p class="text-[10px] text-zinc-400 text-center md:text-right">&copy; 2026 DING CLEANING. All Rights Reserved.</p>
         </div>
     </div>
 </footer>
@@ -681,14 +779,16 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        if (mobileMenu.classList.contains('hidden')) {
-            menuIcon.className = 'fa-solid fa-bars text-lg';
-        } else {
-            menuIcon.className = 'fa-solid fa-xmark text-lg';
-        }
-    });
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-lg';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-lg';
+            }
+        });
+    }
 
     document.querySelectorAll('#mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
@@ -700,21 +800,18 @@
     // Handle hotspots on hover (desktop) and toggle click (mobile screen boundaries)
     function selectHotspot(id, event) {
         if (event) {
-            event.stopPropagation(); // Avoid triggering document body click listeners
+            event.stopPropagation();
         }
         
         const currentTooltip = document.getElementById(`tooltip-${id}`);
         const allTooltips = document.querySelectorAll('.hotspot-tooltip');
         
-        // Check if clicked tooltip is currently visible on mobile
         const isAlreadyVisible = currentTooltip.classList.contains('tooltip-active');
         
-        // Clear all active classes
         allTooltips.forEach(tooltip => {
             tooltip.classList.remove('tooltip-active');
         });
         
-        // If it wasn't visible before, turn it on
         if (!isAlreadyVisible && currentTooltip) {
             currentTooltip.classList.add('tooltip-active');
         }
@@ -740,6 +837,74 @@
             chevron.style.transform = 'rotate(0deg)';
         }
     }
+
+    // --- Gallery Carousel Logic ---
+    const carouselTrack = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const totalSlides = 6;
+    let carouselIndex = 0;
+
+    function getItemsVisible() {
+        return window.innerWidth >= 768 ? 3 : 1;
+    }
+
+    function updateCarousel() {
+        if (!carouselTrack) return;
+        const itemsVisible = getItemsVisible();
+        const maxIndex = totalSlides - itemsVisible;
+        
+        if (carouselIndex > maxIndex) {
+            carouselIndex = maxIndex;
+        }
+        if (carouselIndex < 0) {
+            carouselIndex = 0;
+        }
+
+        const slideWidthPercent = 100 / itemsVisible;
+        const offset = -carouselIndex * slideWidthPercent;
+        carouselTrack.style.transform = `translateX(${offset}%)`;
+
+        updateIndicators(maxIndex);
+    }
+
+    function updateIndicators(maxIndex) {
+        const indicatorContainer = document.getElementById('carousel-indicators');
+        if (!indicatorContainer) return;
+        indicatorContainer.innerHTML = '';
+        
+        for (let i = 0; i <= maxIndex; i++) {
+            const dot = document.createElement('button');
+            dot.className = `h-2 rounded-full transition-all duration-300 ${i === carouselIndex ? 'bg-brandBlue-500 w-5' : 'bg-zinc-300 w-2'}`;
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => {
+                carouselIndex = i;
+                updateCarousel();
+            });
+            indicatorContainer.appendChild(dot);
+        }
+    }
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (carouselIndex > 0) {
+                carouselIndex--;
+                updateCarousel();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const itemsVisible = getItemsVisible();
+            const maxIndex = totalSlides - itemsVisible;
+            if (carouselIndex < maxIndex) {
+                carouselIndex++;
+                updateCarousel();
+            }
+        });
+    }
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
 </script>
 </body>
 </html>
